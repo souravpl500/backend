@@ -5,7 +5,7 @@ const PORT = process.env.port;
 const app = express();
 const { connection } = require("./Configs/db");
 const { usersRoute } =require("./Routes/Users.Route")
-const { authenticate} =require("./Middlewares/authenticate");
+//const { authenticate} =require("./Middlewares/authenticate");
 const { flightRouter } = require("./Routes/Flight.route");
 const { bookingRouter } = require("./Routes/Booking.Route");
 
@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
 app.use("/",usersRoute)
 
 //Authenticate So that only login users can perform below activity
-app.use(authenticate)
+//app.use(authenticate)
 
 //Flight Route
 app.use("/api/flights", flightRouter);
