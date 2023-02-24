@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 const bookingSchema = mongoose.Schema({
-  user: { type: "object" },
-  flight: { type: "object" },
+  user: "object",
+  flight: "object",
 });
 
 const BookingModel = mongoose.model("booking", bookingSchema);
