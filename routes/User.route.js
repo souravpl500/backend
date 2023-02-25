@@ -87,12 +87,12 @@ userRouter.post("/login", async (req, res) => {
   }
 });
 
-userRouter.patch("/users/:id", async (req, res) => {
+userRouter.patch("/:id", async (req, res) => {
   const payload = req.body;
   const id = req.params.id;
   try {
     const user = await UserModel.findByIdAndUpdate({ _id: id }, payload);
-    res.status(204).json({
+    res.status(204).send({
       success: true,
       msg: "Successfully Updated the user",
       users: user,
