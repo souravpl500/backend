@@ -73,7 +73,7 @@ userRouter.post("/login", async (req, res) => {
             { userID: user[0]._id },
             process.env.SecretKey
           );
-          res.status(200).send({ msg: "Login Successful", token: token });
+          res.status(200).send({ msg: "Login Successful", token: token, user: user });
         } else {
           res.status(400).send("Wrong Credential");
         }
