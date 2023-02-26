@@ -22,7 +22,7 @@ userRouter.get("/getProfile/:id", async (req, res) => {
     const user = await UserModel.findById({ _id: id });
     res.status(200).json({
       success: true,
-      User = [...user],
+      User : user,
     });
   } catch (err) {
     console.log({ err: err });
