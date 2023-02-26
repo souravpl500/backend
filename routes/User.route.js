@@ -97,7 +97,7 @@ userRouter.patch("/:id", async (req, res) => {
       msg: "Successfully Updated the user",
       users: user,
     });
-    // }
+    await user.save();
   } catch (err) {
     console.log({ err: err, msg: " User Update Error!" });
     res.send({ success: false, msg: " User Update Error!", err: err });
